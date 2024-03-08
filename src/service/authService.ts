@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'http://localhost:8080';
+const baseURL = 'https://it-noticias-api-dev-rqzq.3.us-1.fl0.io/';
 
 const authService = {
     authenticateUser: async (logearUsuario: any) => {

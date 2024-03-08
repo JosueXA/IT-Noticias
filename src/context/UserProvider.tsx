@@ -29,7 +29,7 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             "token": `${token}`
           }
         };
-        const { data } = await axios.get(`http://localhost:8080/user/perfil`, tokenvalid);
+        const { data } = await axios.get(`https://it-noticias-api-dev-rqzq.3.us-1.fl0.io/`, tokenvalid);
         setUser(data.user)
 
       } catch (error) {

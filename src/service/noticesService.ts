@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Notice } from '../interface/NoticeModel';
 // import AuthProvider from '../context/UserProvider';
 
-const baseURL = 'http://localhost:8080';
+const baseURL = 'https://it-noticias-api-dev-rqzq.3.us-1.fl0.io/';
 
 const noticesService = {
     agregarNoticia: async (nuevaNoticia: Notice) => {
