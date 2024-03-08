@@ -34,28 +34,28 @@ export const Register = () => {
   };
 
   const handleSubmit = async(e: FormEvent<HTMLFormElement>): Promise<void> => {
-    e.preventDefault();
+      e.preventDefault();
     
     if(formData.pass !== repetirPass){
-      setMensaje({msg: "Las contraseñas deben cohincidir", error: true});
-      return;
+        setMensaje({msg: "Las contraseñas deben cohincidir", error: true});
+        return;
     }
 
     if(comprobarRol === admin){
-      formData.rol === "administrator"
+        formData.rol === "administrator"
     }
     try {
-      console.log(formData)
-      const data = await userAdminService.registrarUsuario(formData);
-      console.log(data);
-      setMensaje({ msg: "Registrado exitosamente", error: false })
+        console.log(formData)
+        const data = await userAdminService.registrarUsuario(formData);
+        console.log(data);
+        setMensaje({ msg: "Registrado exitosamente", error: false })
 
-      setTimeout(() => {
-        navigate('/')
-      }, 2000);
-    } catch (error) {
-      const errorData: string = error.response.data.errors[0].msg;
-      setMensaje({ msg: errorData, error: true })
+        setTimeout(() => {
+          navigate('/')
+        }, 2000);
+    } catch (error: any) {
+        const errorData: string = error.response.data.errors[0].msg;
+        setMensaje({ msg: errorData, error: true })
     }
   };
 

@@ -14,7 +14,7 @@ export const NoticeCreate = () => {
   const [message, setMessage] = useState<Mensaje>({ msg: '', error: false });
   const categories = ['Deportes', 'Tecnología', 'Policiales', 'Espectáculo', 'Políticas', 'Interés General'];
 
-  const textareaRef = useRef<HTMLTextAreaElement | undefined>();
+  const textareaRef = useRef<HTMLTextAreaElement | any>();
   if( textareaRef && textareaRef.current ) return;
   
   const initialFormData: Notice = {

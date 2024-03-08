@@ -4,9 +4,10 @@ import axios from "axios";
 interface UserContextType {
   user: boolean;
   setUser: React.Dispatch<React.SetStateAction<boolean>>;
+  cerrarSesion: () => void;
 }
 
-export const UserContext = createContext<UserContextType | undefined>(undefined);
+export const UserContext = createContext<UserContextType | undefined | null | any >(undefined);
 
 interface AuthProviderProps {
   children: ReactNode;
@@ -39,24 +40,23 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     checkearUsuario();
   }, []);
 
-console.log(user)
+    console.log(user)
 
+    const cerrarSesion = () => {
+      setUser({})
+    }
 
-const cerrarSesion = ()=> {
-  setUser({})
-}
-
-  return (
-    <UserContext.Provider
-      value={{
-        user,
-        setUser,
-        cerrarSesion
-      }}
-    >
-      {children}
-    </UserContext.Provider>
-  );
+    return (
+      <UserContext.Provider
+        value={{
+          user,
+          setUser,
+          cerrarSesion
+        }}
+      >
+        {children}
+      </UserContext.Provider>
+    );
 };
 
 export default AuthProvider;
