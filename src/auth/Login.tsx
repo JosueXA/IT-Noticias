@@ -34,7 +34,7 @@ export const Login = () => {
         navigate('/')
       }, 2000);
       
-    } catch (error) {
+    } catch (error: any) {
       const errorData: string = error.response.data.errors[0].msg;
       setMensaje({ msg: errorData, error: true })
     }
