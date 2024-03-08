@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { User } from '../interface/userModel';
 
-const baseURL = 'https://it-noticias-api-dev-rqzq.3.us-1.fl0.io/';
+const baseURL = 'https://it-noticias-api-dev-rqzq.3.us-1.fl0.io';
 
 const userAdmService = {
 
